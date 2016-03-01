@@ -6,7 +6,7 @@
 #    By: mfortin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 20:51:06 by mfortin           #+#    #+#              #
-#    Updated: 2016/02/26 16:59:56 by mfortin          ###   ########.fr        #
+#    Updated: 2016/03/01 22:17:56 by mfortin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,11 @@ FLAG = -Wall -Wextra -Werror
 
 NAME = fractol
 
-SRC =
+SRC =	src/main.c \
+		src/key_biding.c \
+		src/utilities.c \
+		src/mandelbrot.c \
+		src/julia.c
 
 OBJ = $(SRC:.c=.o)
 
