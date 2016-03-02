@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/01 21:53:40 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/02 16:08:12 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/02 17:34:41 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_print_mandel(t_env *e)
 			if (e->i == e->iter_max)
 				ft_put_pixel(e, e->x, e->y, 0x000000);
 			else
-				ft_put_pixel(e, e->x, e->y, e->i * 255 / e->iter_max);
+				ft_put_pixel(e, e->x, e->y, e->i * 25600000000000 / e->iter_max);
 			e->y++;
 		}
 		e->x++;

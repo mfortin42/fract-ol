@@ -6,44 +6,49 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 17:05:19 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/02 16:11:50 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/02 18:19:04 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 
-void	ft_choose_fract(t_env *e, char *str)
+void	ft_ini_fract(t_env *e)
 {
-	if (!(ft_strcmp(str, "mandelbrot")))
-	{
+	if (!(ft_strcmp(e->argv, "mandelbrot")))
 		ft_ini_val_mandel(e);
-		ft_print_mandel(e);
-	}
-	if (!(ft_strcmp(str, "julia")))
-	{
+	if (!(ft_strcmp(e->argv, "julia")))
 		ft_ini_val_julia(e);
-		ft_print_julia(e);
-	}
-	if (!(ft_strcmp(str, "burning-ship")))
-	{
+	if (!(ft_strcmp(e->argv, "burning-ship")))
 		ft_ini_val_bship(e);
+}
+
+void	ft_print_fract(t_env *e)
+{
+	if (!(ft_strcmp(e->argv, "mandelbrot")))
+		ft_print_mandel(e);
+	if (!(ft_strcmp(e->argv, "julia")))
+		ft_print_julia(e);
+	if (!(ft_strcmp(e->argv, "burning-ship")))
 		ft_print_bship(e);
-	}
 }
 
 int		main(int argc, char **argv)
 {
 	t_env e;
 
-	if (argc == 2 && ((!(ft_strcmp(argv[1], "mandelbrot")))
-		|| (!(ft_strcmp(argv[1], "julia")))
-		|| (!(ft_strcmp(argv[1], "burning-ship")))))
+	e.argv = argv[1];
+	if (argc == 2 && ((!(ft_strcmp(e.argv, "mandelbrot")))
+		|| (!(ft_strcmp(e.argv, "julia")))
+		|| (!(ft_strcmp(e.argv, "burning-ship")))))
 	{
 		e.mlx = mlx_init();
 		e.win = mlx_new_window(e.mlx, WIN_X, WIN_Y, "Fractol");
 		e.im = mlx_new_image(e.mlx, WIN_X, WIN_Y);
 		e.imc = mlx_get_data_addr(e.im, &e.bpp, &e.imlen, &e.endi);
-		ft_choose_fract(&e, argv[1]);
+		ft_ini_fract(&e);
+		ft_print_fract(&e);
+		mlx_hook(e.win, KEYPRESS, KEYPRESSMASK, ft_key_biding, &e);
+		mlx_hook(e.win, KEYRELEASE, KEYRELEASEMASK, ft_key_release, &e);
 		mlx_loop_hook(e.mlx, ft_core, &e);
 		mlx_loop(e.mlx);
 	}

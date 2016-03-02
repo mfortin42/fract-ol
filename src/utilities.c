@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/01 21:47:52 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/02 16:43:35 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/02 17:23:57 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_ini_val_mandel(t_env *e)
 	e->im_y = 1000;
 	e->zoom_x = e->im_x / (e->x2 - e->x1);
 	e->zoom_y = e->im_y / (e->y2 - e->y1);
-	e->iter_max = 50;
+	e->iter_max = 150;
 	e->x = 0;
 }
 
