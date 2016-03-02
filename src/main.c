@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 17:05:19 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/01 22:52:13 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/02 16:11:50 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,18 @@ void	ft_choose_fract(t_env *e, char *str)
 {
 	if (!(ft_strcmp(str, "mandelbrot")))
 	{
-		ft_ini_val_mand(e);
+		ft_ini_val_mandel(e);
 		ft_print_mandel(e);
 	}
 	if (!(ft_strcmp(str, "julia")))
 	{
 		ft_ini_val_julia(e);
 		ft_print_julia(e);
+	}
+	if (!(ft_strcmp(str, "burning-ship")))
+	{
+		ft_ini_val_bship(e);
+		ft_print_bship(e);
 	}
 }
 
@@ -31,7 +36,8 @@ int		main(int argc, char **argv)
 	t_env e;
 
 	if (argc == 2 && ((!(ft_strcmp(argv[1], "mandelbrot")))
-		|| (!(ft_strcmp(argv[1], "julia")))))
+		|| (!(ft_strcmp(argv[1], "julia")))
+		|| (!(ft_strcmp(argv[1], "burning-ship")))))
 	{
 		e.mlx = mlx_init();
 		e.win = mlx_new_window(e.mlx, WIN_X, WIN_Y, "Fractol");
