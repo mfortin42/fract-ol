@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 17:05:19 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/02 18:19:04 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/07 11:12:39 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	ft_ini_fract(t_env *e)
 		ft_ini_val_julia(e);
 	if (!(ft_strcmp(e->argv, "burning-ship")))
 		ft_ini_val_bship(e);
+	if (!(ft_strcmp(e->argv, "mandelbis")))
+		ft_ini_val_mandelbis(e);
 }
 
 void	ft_print_fract(t_env *e)
@@ -30,6 +32,8 @@ void	ft_print_fract(t_env *e)
 		ft_print_julia(e);
 	if (!(ft_strcmp(e->argv, "burning-ship")))
 		ft_print_bship(e);
+	if (!(ft_strcmp(e->argv, "mandelbis")))
+		ft_print_mandelbis(e);
 }
 
 int		main(int argc, char **argv)
@@ -39,7 +43,8 @@ int		main(int argc, char **argv)
 	e.argv = argv[1];
 	if (argc == 2 && ((!(ft_strcmp(e.argv, "mandelbrot")))
 		|| (!(ft_strcmp(e.argv, "julia")))
-		|| (!(ft_strcmp(e.argv, "burning-ship")))))
+		|| (!(ft_strcmp(e.argv, "burning-ship")))
+		|| (!(ft_strcmp(e.argv, "mandelbis")))))
 	{
 		e.mlx = mlx_init();
 		e.win = mlx_new_window(e.mlx, WIN_X, WIN_Y, "Fractol");

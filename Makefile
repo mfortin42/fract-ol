@@ -6,7 +6,7 @@
 #    By: mfortin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 20:51:06 by mfortin           #+#    #+#              #
-#    Updated: 2016/03/02 16:08:42 by mfortin          ###   ########.fr        #
+#    Updated: 2016/03/07 11:10:46 by mfortin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRC =	src/main.c \
 		src/key_biding.c \
 		src/utilities.c \
 		src/mandelbrot.c \
+		src/mandelbis.c \
 		src/julia.c \
 		src/burning_ship.c
 

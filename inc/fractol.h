@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 17:02:15 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/02 18:11:44 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/07 12:55:24 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@
 # define KEYRELEASEMASK (1L<<1)
 
 # define ESC 53
+# define COLOR 8
+# define ITER_M 69
+# define ITER_L 78
+# define RESET 82
 
 typedef struct	s_env
 {
@@ -63,22 +67,29 @@ typedef struct	s_env
 	float		zoom;
 	float		zoom_x;
 	float		zoom_y;
+	int			col;
+
+	int			c;
+	int			itm;
+	int			res;
 }				t_env;
 
 void			ft_ini_fract(t_env *e);
 void			ft_ini_val_mandel(t_env *e);
 void			ft_ini_val_julia(t_env *e);
 void			ft_ini_val_bship(t_env *e);
+void			ft_ini_val_mandelbis(t_env *e);
 
 void			ft_print_fract(t_env *e);
 void			ft_print_mandel(t_env *e);
 void			ft_print_julia(t_env *e);
 void			ft_print_bship(t_env *e);
+void			ft_print_mandelbis(t_env *e);
 
 int				ft_core(t_env *e);
-int				ft_key_biding(void);
-int				ft_key_release(int keycode);
-int				ft_do_key_action(void);
+int				ft_key_biding(int keycode, t_env *e);
+int				ft_key_release(int keycode, t_env *e);
+void			ft_do_key_ation(t_env *e);
 
 void			ft_put_pixel(t_env *e, int x, int y, int color);
 void			ft_error(void);

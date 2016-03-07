@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/02 16:07:29 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/02 17:33:48 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/07 11:25:25 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_print_bship(t_env *e)
 {
+	e->x = 0;
 	while (e->x < e->im_x)
 	{
 		e->y = 0;
@@ -32,9 +33,9 @@ void	ft_print_bship(t_env *e)
 				e->i++;
 			}
 			if (e->i == e->iter_max)
-				ft_put_pixel(e, e->x, e->y + 100, 0x000000);
+				ft_put_pixel(e, e->x, e->y, 0x000000);
 			else
-				ft_put_pixel(e, e->x, e->y + 100, e->i * 256000000000 / e->iter_max);
+				ft_put_pixel(e, e->x, e->y, e->i * e->col / e->iter_max);
 			e->y++;
 		}
 		e->x++;
