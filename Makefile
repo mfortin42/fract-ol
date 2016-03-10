@@ -6,7 +6,7 @@
 #    By: mfortin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 20:51:06 by mfortin           #+#    #+#              #
-#    Updated: 2016/03/07 11:10:46 by mfortin          ###   ########.fr        #
+#    Updated: 2016/03/07 13:08:01 by mfortin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ NAME = fractol
 SRC =	src/main.c \
 		src/key_biding.c \
 		src/utilities.c \
+		src/init.c \
 		src/mandelbrot.c \
 		src/mandelbis.c \
 		src/julia.c \
