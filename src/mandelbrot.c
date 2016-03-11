@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/01 21:53:40 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/11 13:25:14 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/11 18:23:14 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	ft_print_mandel(t_env *e)
 {
 	e->x = 0;
-	while (e->x < e->im_x)
+	while (e->x < e->im_x && e->x < WIN_X)
 	{
 		e->y = 0;
-		while (e->y < e->im_y)
+	while (e->y < e->im_y && e->y < WIN_Y)
 		{
 			e->c_r = e->x / e->zoom + e->x1;
 			e->c_i = e->y / e->zoom + e->y1;

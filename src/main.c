@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 17:05:19 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/10 15:22:22 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/11 18:52:05 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int		main(int argc, char **argv)
 		ft_print_fract(&e);
 		mlx_hook(e.win, KEYPRESS, KEYPRESSMASK, ft_key_biding, &e);
 		mlx_hook(e.win, KEYRELEASE, KEYRELEASEMASK, ft_key_release, &e);
+		mlx_mouse_hook(e.win, ft_mouse_hook, &e);
 		mlx_loop_hook(e.mlx, ft_core, &e);
 		mlx_loop(e.mlx);
 	}

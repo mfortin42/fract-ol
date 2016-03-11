@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 17:02:15 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/11 13:24:42 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/11 17:40:39 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@
 # define KEYRELEASE 3
 # define KEYPRESSMASK (1L<<0)
 # define KEYRELEASEMASK (1L<<1)
+
+# define POINTERMOTIONMASK (1L<<6)
+# define MOTIONNOTIFY  6
 
 # define ESC 53
 # define COLOR 8
@@ -72,6 +75,11 @@ typedef struct	s_env
 	int			c;
 	int			itm;
 	int			res;
+
+	int			mouse_x;
+	int			mouse_y;
+
+	float		h;
 }				t_env;
 
 void			ft_ini_fract(t_env *e);
@@ -93,6 +101,9 @@ void			ft_do_key_ation(t_env *e);
 
 void			ft_put_pixel(t_env *e, int x, int y, int color);
 void			ft_error(void);
+
+int	ft_mouse_hook(int keycode, int x, int y, t_env *e);
+int	capture_mouse_pos(int x, int y, t_env *e);
 
 #endif
 
