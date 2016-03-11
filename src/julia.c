@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/01 22:11:30 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/08 14:12:44 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/11 13:45:35 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	ft_print_julia(t_env *e)
 				e->i++;
 			}
 			if (e->i == e->iter_max)
-				ft_put_pixel(e, e->x + 130, e->y, 0xFFFFFF);
+				ft_put_pixel(e, e->x, e->y, 0xFFFFFF);
 			else
-				ft_put_pixel(e, e->x + 130, e->y, e->i * e->col / e->iter_max);
+				ft_put_pixel(e, e->x, e->y, e->i * e->col / e->iter_max);
 			e->y++;
 		}
 		e->x++;

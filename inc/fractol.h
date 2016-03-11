@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 17:02:15 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/10 15:22:51 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/11 13:24:42 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <fcntl.h>
 # include <math.h>
 
-# define WIN_X 1000
-# define WIN_Y 1000
+# define WIN_X 800
+# define WIN_Y 600
 
 # define KEYPRESS 2
 # define KEYRELEASE 3

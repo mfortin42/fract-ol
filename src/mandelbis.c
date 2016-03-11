@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/01 21:53:40 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/07 11:33:31 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/11 13:11:36 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_print_mandelbis(t_env *e)
 		e->y = 0;
 		while (e->y < e->im_y)
 		{
-			e->c_r = e->x / e->zoom_x + e->x1;
-			e->c_i = e->y / e->zoom_y + e->y1;
+			e->c_r = e->x / e->zoom + e->x1;
+			e->c_i = e->y / e->zoom + e->y1;
 			e->z_r = 0;
 			e->z_i = 0;
 			e->i = 0;
