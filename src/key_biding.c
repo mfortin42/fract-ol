@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/01 21:52:55 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/14 14:53:36 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/14 15:23:52 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	ft_julia_hook(int x, int y, t_env *e)
 {
 	if ((!(ft_strcmp(e->argv, "julia"))))
 	{
-		e->c_r = (x - WIN_X) / 300;
-		e->c_i = (y - WIN_Y) / 300;
+		e->c_r = (float)(x + 400 - WIN_X) / 300;
+		e->c_i = (float)(y + 320 - WIN_Y) / 300;
 	}
 	return (1);
 }
