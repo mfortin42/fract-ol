@@ -6,11 +6,21 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/01 21:52:55 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/14 14:21:29 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/14 14:53:36 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
+
+int	ft_julia_hook(int x, int y, t_env *e)
+{
+	if ((!(ft_strcmp(e->argv, "julia"))))
+	{
+		e->c_r = (x - WIN_X) / 300;
+		e->c_i = (y - WIN_Y) / 300;
+	}
+	return (1);
+}
 
 int	ft_mouse_hook(int keycode, int x, int y, t_env *e)
 {
@@ -42,11 +52,6 @@ int	ft_mouse_hook(int keycode, int x, int y, t_env *e)
 		e->x2 = tmpx + (e->x2 - tmpx2) / 4;
 		e->y1 = tmpy - (e->y2 - e->y1) / 4;
 		e->y2 = tmpy + (e->y2 - tmpy2) / 4;
-	}
-	if ((!(ft_strcmp(e->argv, "julia"))))
-	{
-		e->c_r = (x - WIN_X) / 300;
-		e->c_i = (y - WIN_Y) / 300;
 	}
 	return (1);
 }

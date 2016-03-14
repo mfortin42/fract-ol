@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 17:05:19 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/11 18:52:05 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/14 14:43:24 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int		main(int argc, char **argv)
 		e.imc = mlx_get_data_addr(e.im, &e.bpp, &e.imlen, &e.endi);
 		ft_ini_fract(&e);
 		ft_print_fract(&e);
+		mlx_hook(e.win, MOTIONNOTIFY, POINTERMOTIONMASK, ft_julia_hook, &e);
 		mlx_hook(e.win, KEYPRESS, KEYPRESSMASK, ft_key_biding, &e);
 		mlx_hook(e.win, KEYRELEASE, KEYRELEASEMASK, ft_key_release, &e);
 		mlx_mouse_hook(e.win, ft_mouse_hook, &e);

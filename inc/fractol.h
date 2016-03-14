@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 17:02:15 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/14 13:44:21 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/14 14:43:55 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,8 @@ void			ft_do_key_ation(t_env *e);
 void			ft_put_pixel(t_env *e, int x, int y, int color);
 void			ft_error(void);
 
-int	ft_mouse_hook(int keycode, int x, int y, t_env *e);
-int	capture_mouse_pos(int x, int y, t_env *e);
+int				ft_mouse_hook(int keycode, int x, int y, t_env *e);
+int				ft_julia_hook(int x, int y, t_env *e);
 
 #endif
 
