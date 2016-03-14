@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/14 16:18:39 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/14 16:21:36 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/14 16:37:48 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,12 @@ void	ft_zoom_out(int x, int y, t_env *e)
 
 int		ft_mouse_hook(int keycode, int x, int y, t_env *e)
 {
-	if (keycode == 2)
-		ft_zoom_in(x, y, e);
-	if (keycode == 1)
-		ft_zoom_out(x, y, e);
+	if (y > 0)
+	{
+		if (keycode == 2)
+			ft_zoom_in(x, y, e);
+		if (keycode == 1)
+			ft_zoom_out(x, y, e);
+	}
 	return (1);
 }

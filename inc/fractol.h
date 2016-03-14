@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 17:02:15 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/14 16:22:45 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/14 16:41:26 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@
 # define MOTIONNOTIFY 6
 
 # define ESC 53
-# define COLOR 8
 # define ITER_M 69
 # define ITER_L 78
 # define RESET 82
+# define JULIA 8
 
 typedef struct	s_env
 {
@@ -70,11 +70,10 @@ typedef struct	s_env
 	float		zoom;
 	float		zoom_x;
 	float		zoom_y;
-	int			col;
 
-	int			c;
 	int			itm;
 	int			res;
+	int			bj;
 
 	float		tmpx;
 	float		tmpy;

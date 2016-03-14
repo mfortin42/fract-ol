@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/01 21:52:55 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/14 16:15:23 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/14 16:42:00 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int		ft_key_biding(int keycode, t_env *e)
 {
-	if (keycode == COLOR)
-		e->c = 1;
 	if (keycode == ITER_M || keycode == ITER_L)
 		e->itm = (keycode == ITER_M ? 1 : -1);
 	if (keycode == RESET)
 		e->res = 1;
+	if (keycode == JULIA)
+		e->bj = 1;
 	return (0);
 }
 
@@ -27,19 +27,17 @@ int		ft_key_release(int keycode, t_env *e)
 {
 	if (keycode == ESC)
 		exit(1);
-	if (keycode == COLOR)
-		e->c = 0;
 	if (keycode == ITER_M || keycode == ITER_L)
 		e->itm = 0;
 	if (keycode == RESET)
 		e->res = 0;
+	if (keycode == JULIA)
+		e->bj = 0;
 	return (0);
 }
 
 void	ft_do_key_action(t_env *e)
 {
-	if (e->c)
-		e->col = e->col + 100;
 	if (e->itm == -1 && e->iter_max > 20)
 		e->iter_max -= 20;
 	if (e->itm == 1)
