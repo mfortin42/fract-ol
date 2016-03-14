@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 17:02:15 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/11 17:40:39 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/14 13:44:21 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,6 @@ typedef struct	s_env
 	int			itm;
 	int			res;
 
-	int			mouse_x;
-	int			mouse_y;
-
-	float		h;
 }				t_env;
 
 void			ft_ini_fract(t_env *e);

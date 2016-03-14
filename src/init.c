@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/07 13:05:13 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/11 18:51:21 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/14 14:14:10 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	ft_ini_val_julia(t_env *e)
 	e->im_y = (e->y2 - e->y1) * e->zoom;
 	e->iter_max = 250;
 	e->col = 800;
+	e->c_r = 0.285;
+	e->c_i = 0.001;
 }
 
 void	ft_ini_val_bship(t_env *e)

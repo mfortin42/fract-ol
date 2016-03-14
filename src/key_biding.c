@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/01 21:52:55 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/11 18:56:34 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/14 14:21:29 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,23 @@ int	ft_mouse_hook(int keycode, int x, int y, t_env *e)
 	float	tmpx;
 	float	tmpy;
 	float	tmpx2;
-	float	tmpy2
-		;
+	float	tmpy2;
+
 	if (keycode == 2)
 	{
-		e->zoom /= 1.2;
+		e->zoom /= 2;
+		tmpx = e->x1 + x * (e->x2 - e->x1) / WIN_X;
+		tmpy = e->y1 + y * (e->y2 - e->y1) / WIN_Y;
+		tmpx2 = e->x1;
+		tmpy2 = e->y1;
+		e->x1 = tmpx - (e->x2 - e->x1);
+		e->x2 = tmpx + (e->x2 - tmpx2);
+		e->y1 = tmpy - (e->y2 - e->y1);
+		e->y2 = tmpy + (e->y2 - tmpy2);
 	}
 	if (keycode == 1)
 	{
 		e->zoom *= 2;
-
 		tmpx = e->x1 + x * (e->x2 - e->x1) / WIN_X;
 		tmpy = e->y1 + y * (e->y2 - e->y1) / WIN_Y;
 		tmpx2 = e->x1;
@@ -35,6 +42,11 @@ int	ft_mouse_hook(int keycode, int x, int y, t_env *e)
 		e->x2 = tmpx + (e->x2 - tmpx2) / 4;
 		e->y1 = tmpy - (e->y2 - e->y1) / 4;
 		e->y2 = tmpy + (e->y2 - tmpy2) / 4;
+	}
+	if ((!(ft_strcmp(e->argv, "julia"))))
+	{
+		e->c_r = (x - WIN_X) / 300;
+		e->c_i = (y - WIN_Y) / 300;
 	}
 	return (1);
 }

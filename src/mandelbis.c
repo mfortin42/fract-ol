@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/01 21:53:40 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/11 13:11:36 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/14 13:55:54 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_print_mandelbis(t_env *e)
 			if (e->i == e->iter_max)
 				ft_put_pixel(e, e->x, e->y, 0x000000);
 			else
-				ft_put_pixel(e, e->x, e->y, e->i * e->col / e->iter_max);
+				ft_put_pixel(e, e->x, e->y, e->i * 1100000);
 			e->y++;
 		}
 		e->x++;
