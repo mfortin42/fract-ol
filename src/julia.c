@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/01 22:11:30 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/14 14:14:21 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/14 16:18:25 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	ft_print_julia(t_env *e)
 {
-	e->x = 0;
-	while (e->x < e->im_x)
+	e->x = -1;
+	while (++e->x < e->im_x)
 	{
-		e->y = 0;
-		while (e->y < e->im_y)
+		e->y = -1;
+		while (++e->y < e->im_y)
 		{
-			//e->c_r = 0.285;
-			//e->c_i = 0.01;
 			e->z_r = e->x / e->zoom + e->x1;
 			e->z_i = e->y / e->zoom + e->y1;
 			e->i = 0;
@@ -36,8 +34,16 @@ void	ft_print_julia(t_env *e)
 				ft_put_pixel(e, e->x, e->y, 0xFFFFFF);
 			else
 				ft_put_pixel(e, e->x, e->y, e->i * 1100000);
-			e->y++;
 		}
-		e->x++;
 	}
+}
+
+int		ft_julia_hook(int x, int y, t_env *e)
+{
+	if (!(ft_strcmp(e->argv, "julia")))
+	{
+		e->c_r = (float)(x + 400 - WIN_X) / 300;
+		e->c_i = (float)(y + 320 - WIN_Y) / 300;
+	}
+	return (1);
 }

@@ -6,55 +6,11 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/01 21:52:55 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/14 15:23:52 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/14 16:15:23 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
-
-int	ft_julia_hook(int x, int y, t_env *e)
-{
-	if ((!(ft_strcmp(e->argv, "julia"))))
-	{
-		e->c_r = (float)(x + 400 - WIN_X) / 300;
-		e->c_i = (float)(y + 320 - WIN_Y) / 300;
-	}
-	return (1);
-}
-
-int	ft_mouse_hook(int keycode, int x, int y, t_env *e)
-{
-	float	tmpx;
-	float	tmpy;
-	float	tmpx2;
-	float	tmpy2;
-
-	if (keycode == 2)
-	{
-		e->zoom /= 2;
-		tmpx = e->x1 + x * (e->x2 - e->x1) / WIN_X;
-		tmpy = e->y1 + y * (e->y2 - e->y1) / WIN_Y;
-		tmpx2 = e->x1;
-		tmpy2 = e->y1;
-		e->x1 = tmpx - (e->x2 - e->x1);
-		e->x2 = tmpx + (e->x2 - tmpx2);
-		e->y1 = tmpy - (e->y2 - e->y1);
-		e->y2 = tmpy + (e->y2 - tmpy2);
-	}
-	if (keycode == 1)
-	{
-		e->zoom *= 2;
-		tmpx = e->x1 + x * (e->x2 - e->x1) / WIN_X;
-		tmpy = e->y1 + y * (e->y2 - e->y1) / WIN_Y;
-		tmpx2 = e->x1;
-		tmpy2 = e->y1;
-		e->x1 = tmpx - (e->x2 - e->x1) / 4;
-		e->x2 = tmpx + (e->x2 - tmpx2) / 4;
-		e->y1 = tmpy - (e->y2 - e->y1) / 4;
-		e->y2 = tmpy + (e->y2 - tmpy2) / 4;
-	}
-	return (1);
-}
 
 int		ft_key_biding(int keycode, t_env *e)
 {

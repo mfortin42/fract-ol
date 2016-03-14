@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 17:02:15 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/14 14:43:55 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/14 16:22:45 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 # define KEYRELEASEMASK (1L<<1)
 
 # define POINTERMOTIONMASK (1L<<6)
-# define MOTIONNOTIFY  6
+# define MOTIONNOTIFY 6
 
 # define ESC 53
 # define COLOR 8
@@ -76,6 +76,11 @@ typedef struct	s_env
 	int			itm;
 	int			res;
 
+	float		tmpx;
+	float		tmpy;
+	float		tmpx2;
+	float		tmpy2;
+
 }				t_env;
 
 void			ft_ini_fract(t_env *e);
@@ -101,14 +106,7 @@ void			ft_error(void);
 int				ft_mouse_hook(int keycode, int x, int y, t_env *e);
 int				ft_julia_hook(int x, int y, t_env *e);
 
+void			ft_zoom_in(int x, int y, t_env *e);
+void			ft_zoom_out(int x, int y, t_env *e);
+
 #endif
-
-
-
-
-
-
-
-
-
-
