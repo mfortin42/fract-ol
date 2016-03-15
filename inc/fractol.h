@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 17:02:15 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/14 17:26:11 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/15 12:22:38 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@
 # define ITER_L 78
 # define RESET 82
 # define JULIA 8
+# define ONE 18
+# define TWO 19
+# define THREE 20
+# define FOUR 21
 
 typedef struct	s_env
 {
@@ -100,6 +104,7 @@ int				ft_key_release(int keycode, t_env *e);
 void			ft_do_key_ation(t_env *e);
 
 void			ft_put_pixel(t_env *e, int x, int y, int color);
+void			ft_print_settings(void);
 void			ft_error(void);
 
 int				ft_mouse_hook(int keycode, int x, int y, t_env *e);

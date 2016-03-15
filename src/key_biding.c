@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/01 21:52:55 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/14 16:42:00 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/15 12:12:36 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ int		ft_key_biding(int keycode, t_env *e)
 		e->res = 1;
 	if (keycode == JULIA)
 		e->bj = 1;
+	if (keycode == ONE || keycode == TWO)
+		e->argv = (keycode == ONE ? "mandelbrot" : "julia");
+	if (keycode == THREE || keycode == FOUR)
+		e->argv = (keycode == THREE ? "burning-ship" : "mandelbis");
+	if (keycode == ONE || keycode == TWO || keycode == THREE || keycode == FOUR)
+		ft_ini_fract(e);
 	return (0);
 }
 
@@ -38,10 +44,10 @@ int		ft_key_release(int keycode, t_env *e)
 
 void	ft_do_key_action(t_env *e)
 {
-	if (e->itm == -1 && e->iter_max > 20)
-		e->iter_max -= 20;
+	if (e->itm == -1 && e->iter_max > 10)
+		e->iter_max -= 10;
 	if (e->itm == 1)
-		e->iter_max += 20;
+		e->iter_max += 10;
 	if (e->res == 1)
 		ft_ini_fract(e);
 }

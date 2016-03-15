@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/26 17:05:19 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/14 14:43:24 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/15 12:27:19 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int		main(int argc, char **argv)
 		|| (!(ft_strcmp(e.argv, "burning-ship")))
 		|| (!(ft_strcmp(e.argv, "mandelbis")))))
 	{
+		ft_print_settings();
 		e.mlx = mlx_init();
 		e.win = mlx_new_window(e.mlx, WIN_X, WIN_Y, "Fractol");
 		e.im = mlx_new_image(e.mlx, WIN_X, WIN_Y);
