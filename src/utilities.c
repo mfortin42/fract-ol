@@ -6,7 +6,7 @@
 /*   By: mfortin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/01 21:47:52 by mfortin           #+#    #+#             */
-/*   Updated: 2016/03/15 12:52:12 by mfortin          ###   ########.fr       */
+/*   Updated: 2016/03/15 14:40:39 by mfortin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_print_settings(void)
 	ft_putstr("      | '1 - 2 - 3 or 4' | switch to an other fractal |\n");
 	ft_putstr("      |       'C'        |   pause the modifications  |\n");
 	ft_putstr("      |                  |          of Julia          |\n");
-	ft_putstr("      |       '0'        |           reset            |\n");
+	ft_putstr("      |      num '0'     |           reset            |\n");
 	ft_putstr("      ------------------------------------------------\n\n\n");
 }
 
