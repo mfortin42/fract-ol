@@ -47,7 +47,7 @@ typedef struct	s_env
 	char		*argv;
 
 	void		*im;
-	void		*imc;
+	char		*imc;
 	int			bpp;
 	int			imlen;
 	int			endi;
