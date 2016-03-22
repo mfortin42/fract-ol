@@ -1,4 +1,4 @@
 # fractol
-A software that creates a 3D version out of a map.
+Graphics program that displays and manipulates several fractals using the keyboard and mouse.
 
-Final grade : 125/100.
+Final grade : 113/100.
