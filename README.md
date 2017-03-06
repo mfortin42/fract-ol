@@ -11,4 +11,5 @@ Graphics program that displays and manipulates several fractals using the keyboa
 ![Alt text](http://i.imgur.com/wLR1Lia.png "Burning-ship")
 
 **Settings**
+
 ![Alt text](http://i.imgur.com/zZ1gfT0.png "Settings")
